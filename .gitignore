@@ -1,0 +1,19 @@
+# Sistemi operativi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivi e file temporanei
+*.zip
+*.tar.gz
+*.crx
+*.log

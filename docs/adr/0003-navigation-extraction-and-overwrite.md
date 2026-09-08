@@ -1,0 +1,3 @@
+# Estrazione Dispense via Navigazione Lezioni e Sovrascrittura
+
+L'estensione opera sulla piattaforma `lms.mercatorum.multiversity.click` (e domini affini). Poiché il pulsante **Visualizza** associato all'etichetta **Dispensa** si carica contestualmente alla pagina della singola lezione, l'estensione itera attraverso i capitoli e le lezioni (partendo dal capitolo scelto dall'utente), individua l'URL del documento PDF collegato al pulsante/sezione Dispensa, ne scarica il contenuto binario ed esegue la scrittura sul filesystem locale con politica di **sovrascrittura incondizionata** dei file preesistenti.

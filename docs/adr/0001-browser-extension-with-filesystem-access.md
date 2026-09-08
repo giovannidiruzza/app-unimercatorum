@@ -1,0 +1,3 @@
+# Estensione Browser con File System Access API per il Download
+
+Abbiamo deciso di realizzare l'applicazione come **Estensione Browser** (Manifest V3 per Chromium: Chrome / Edge) che inietta un'interfaccia interattiva direttamente sulle pagine del portale UniMercatorum, sfruttando le **File System Access API** (`window.showDirectoryPicker()`) per il salvataggio dei file. Questa scelta evita di dover gestire credenziali e login (l'utente naviga già autenticato nel proprio browser) ed elimina la necessità di avviare un server locale backend, consentendo allo stesso tempo all'utente di selezionare una qualsiasi cartella sul PC e scrivere direttamente l'albero di directory e dispense PDF.
