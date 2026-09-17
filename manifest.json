@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "UniMercatorum Dispense Downloader",
-  "version": "1.0.0",
-  "description": "Scarica automaticamente tutte le dispense PDF delle videolezioni della piattaforma UniMercatorum / Multiversity direttamente sul tuo PC.",
+  "name": "UniMercatorum Suite (Dispense & Video Auto-Player)",
+  "version": "1.1.0",
+  "description": "Scarica automaticamente tutte le dispense PDF ed esegue la riproduzione sequenziale con avanzamento automatico al 100% dei video didattici UniMercatorum.",
   "permissions": [
     "storage",
     "downloads",
@@ -33,8 +33,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://lms.mercatorum.multiversity.click/videolezioni/*",
-        "*://*.multiversity.click/videolezioni/*",
+        "*://lms.mercatorum.multiversity.click/*",
+        "*://*.multiversity.click/*",
         "*://*.unimercatorum.it/*"
       ],
       "css": ["styles.css"],
@@ -43,8 +43,8 @@
     },
     {
       "matches": [
-        "*://lms.mercatorum.multiversity.click/videolezioni/*",
-        "*://*.multiversity.click/videolezioni/*",
+        "*://lms.mercatorum.multiversity.click/*",
+        "*://*.multiversity.click/*",
         "*://*.unimercatorum.it/*"
       ],
       "js": ["bridge.js"],

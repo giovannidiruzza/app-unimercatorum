@@ -125,6 +125,44 @@
   box-shadow: 0 0 8px #ef4444;
 }
 
+/* Tabs Bar */
+.um-dl-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 12px 0 12px;
+  gap: 6px;
+}
+
+.um-dl-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 9px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.um-dl-tab-btn:hover {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.um-dl-tab-btn.active {
+  color: #ffffff;
+  border-bottom-color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  border-radius: 6px 6px 0 0;
+}
+
 .um-dl-close-btn {
   background: transparent;
   border: none;
@@ -384,3 +422,102 @@
 .um-dl-log-success { color: #34d399; font-weight: 600; }
 .um-dl-log-warning { color: #fbbf24; }
 .um-dl-log-error { color: #f87171; }
+
+/* Video Tab & Controls */
+.um-dl-tab-content {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.um-dl-tab-content.active {
+  display: flex;
+}
+
+.um-dl-btn-video-start {
+  flex: 1;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+  transition: all 0.2s ease;
+}
+
+.um-dl-btn-video-start:hover:not(:disabled) {
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
+}
+
+.um-dl-btn-video-start:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.um-dl-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.um-dl-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #cbd5e1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.um-dl-toggle-label input[type="checkbox"] {
+  accent-color: #10b981;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.um-dl-video-info-box {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.um-dl-video-title {
+  font-weight: 600;
+  font-size: 12px;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.um-dl-video-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #34d399;
+}
+
+.um-dl-pill-badge.video-active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.4);
+}

@@ -1,62 +1,48 @@
-# UniMercatorum Dispense Downloader (Estensione Chrome / Edge)
+# UniMercatorum Suite (Dispense Downloader & Video Auto-Player)
 
-Estensione browser (Manifest V3) per scaricare in modo automatico e ordinato sul tuo PC tutte le dispense PDF delle videolezioni della piattaforma e-learning UniMercatorum / Multiversity (`lms.mercatorum.multiversity.click`).
+Estensione browser (Manifest V3) per Google Chrome e Microsoft Edge progettata per la piattaforma e-learning UniMercatorum / Multiversity (`lms.mercatorum.multiversity.click`).
 
----
-
-## 🚀 Come Installare l'Estensione (Google Chrome o Microsoft Edge)
-
-L'installazione richiede meno di 1 minuto:
-
-1. **Apri la gestione delle estensioni nel tuo browser**:
-   - Su **Google Chrome**: digita nella barra degli indirizzi `chrome://extensions` e premi Invio.
-   - Su **Microsoft Edge**: digita nella barra degli indirizzi `edge://extensions` e premi Invio.
-
-2. **Attiva la "Modalità sviluppatore"**:
-   - In alto a destra attiva l'interruttore **Modalità sviluppatore** (Developer Mode).
-
-3. **Carica l'estensione**:
-   - Clicca sul pulsante **Carica estensione non pacchettizzata** (o *Load unpacked*).
-   - Seleziona questa cartella del progetto:
-     ```text
-     c:\Users\giovanni\Desktop\progetti\app unimercatorum
-     ```
-
-4. **Fatto!** L'estensione `UniMercatorum Dispense Downloader` è ora attiva nel tuo browser.
+Include due moduli integrati:
+1. **📥 Dispense PDF**: Scarica in modo automatico e ordinato sul tuo PC tutte le dispense PDF delle lezioni.
+2. **🎬 Auto-Play Video**: Riproduce in sequenza i video didattici, monitora il completamento al 100%, apre automaticamente i capitoli successivi e consente la regolazione di velocità e muto.
 
 ---
 
-## 📖 Come Utilizzare l'Estensione
+## 🚀 Come Installare o Aggiornare l'Estensione
 
-1. **Vai sulla piattaforma UniMercatorum**:
-   - Apri una qualsiasi pagina delle videolezioni del tuo corso, ad esempio:
-     `https://lms.mercatorum.multiversity.click/videolezioni/...`
-
-2. **Apri il Pannello Downloader**:
-   - In basso a destra noterai un pulsante pill elegante: **📥 UniMercatorum Downloader**.
-   - Cliccalo per aprire il pannello di controllo.
-
-3. **Seleziona la tua Cartella**:
-   - Clicca su **Seleziona Cartella del PC**.
-   - Scegli la cartella sul tuo computer dove vuoi salvare tutti i PDF.
-   - Conferma il permesso di scrittura richiesto da Chrome/Edge.
-
-4. **Scegli il Capitolo di Partenza**:
-   - I capitoli vengono rilevati automaticamente.
-   - Dal menu a tendina seleziona da quale capitolo vuoi iniziare (es. *Cap. 9 - Le coniche*).
-   - Se desideri puoi impostare anche il capitolo finale.
-
-5. **Avvia il Download**:
-   - Clicca su **▶️ Avvia Download**.
-   - L'estensione aprirà in sequenza le tendine, individuerà per ciascuna la riga **Dispensa**, cliccherà **Visualizza**, scaricherà il PDF e lo salverà nella tua cartella locale con il nome ordinato:
-     `Cap. 09 - Le coniche.pdf`
-   - I file già presenti vengono sovrascritti come da tua preferenza.
+1. Apri la gestione estensioni:
+   - Su **Chrome**: `chrome://extensions`
+   - Su **Edge**: `edge://extensions`
+2. Attiva la **Modalità sviluppatore** (in alto a destra).
+3. Se l'hai già caricata, clicca semplicemente sul pulsante circolare **Aggiorna (🔄)**.
+4. Se è la prima installazione, clicca su **Carica estensione non pacchettizzata** e seleziona questa cartella del progetto:
+   ```text
+   c:\Users\giovanni\Desktop\progetti\app unimercatorum
+   ```
 
 ---
 
-## ⚙️ Caratteristiche Tecniche
+## 📖 Come Utilizzare la Riproduzione Automatica Video
 
-- **Zero Credenziali salvate**: Funziona direttamente all'interno della tua sessione già autenticata nel browser.
-- **Salvataggio Nativo**: Utilizza le moderne `File System Access API` (`window.showDirectoryPicker()`) senza passare per la cartella temporanea dei download.
-- **Pausa di Sicurezza (Anti-Rate-Limiting)**: Pausa predefinita di 1.5 secondi tra un capitolo e l'altro per rispettare i server dell'università.
-- **Controlli Pausa & Stop**: Puoi mettere in pausa o interrompere in qualsiasi momento.
+1. **Apri una videolezione del corso** su UniMercatorum.
+2. **Clicca sul pulsante flottante** in basso a destra (🎓 UniMercatorum Tool).
+3. **Seleziona la scheda "🎬 Auto-Play Video"** in alto nel pannello.
+4. **Configura le opzioni desiderate**:
+   - **Sezione del Corso**: Seleziona se riprodurre tutto il corso in sequenza o una specifica macro-sezione.
+   - **Velocità video**: 1.0x (consigliato per evitare disconnessioni del server e garantire la certificazione delle presenze).
+   - **Muto**: Attivo di default (consigliato per evitare blocchi dell'autoplay da parte del browser).
+   - **Salta video già al 100%**: Salta automaticamente le lezioni già completate in precedenza.
+   - **Modalità Notte**: Mantiene lo schermo attivo (`Screen Wake Lock API`) e previene la sospensione del PC per l'esecuzione continua notturna.
+5. **Clicca su "🎬 Avvia Riproduzione"**:
+   - L'estensione gestirà automaticamente l'apertura delle macro-sezioni e dei capitoli (a fisarmonica/mutua esclusione), avvierà i video e ne monitorerà l'avanzamento.
+   - Non appena la barra raggiunge il **100%**, attenderà la sincronizzazione della piattaforma e passerà automaticamente al video successivo.
+   - Puoi usare in qualsiasi momento i tasti **Pausa**, **Stop** o **⏭️ Salta** per avanzare manualmente al video successivo.
+
+---
+
+## 📖 Come Utilizzare il Download Dispense PDF
+
+1. Clicca sulla scheda **"📥 Dispense PDF"**.
+2. Clicca su **Seleziona Cartella del PC** e scegli dove salvare i PDF.
+3. Seleziona i capitoli e clicca su **▶️ Avvia Download**.
+4. I file verranno salvati in ordine progressivo direttamente nella cartella scelta.
