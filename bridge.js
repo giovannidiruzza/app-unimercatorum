@@ -1,5 +1,5 @@
 /**
- * UniMercatorum Suite - Main World Bridge
+ * Multiversity Suite - Main World Bridge
  * Esegue nel contesto nativo della pagina (Main World)
  * 1. Intercetta window.open per catturare URL delle dispense
  * 2. Maschera playbackRate > 1x verso gli script della piattaforma (anti-espulsione client-side)

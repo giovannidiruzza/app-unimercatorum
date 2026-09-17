@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "UniMercatorum Suite (Dispense & Video Auto-Player)",
-  "version": "1.1.0",
-  "description": "Scarica automaticamente tutte le dispense PDF ed esegue la riproduzione sequenziale con avanzamento automatico al 100% dei video didattici UniMercatorum.",
+  "name": "Multiversity Suite (Dispense & Video Auto-Player)",
+  "version": "1.2.0",
+  "description": "Scarica automaticamente tutte le dispense PDF ed esegue la riproduzione sequenziale con avanzamento automatico al 100% dei video didattici per gli atenei Multiversity (Mercatorum, Pegaso, San Raffaele).",
   "permissions": [
     "storage",
     "downloads",
@@ -12,10 +12,12 @@
     "<all_urls>",
     "*://lms.mercatorum.multiversity.click/*",
     "*://*.multiversity.click/*",
-    "*://*.unimercatorum.it/*"
+    "*://*.unimercatorum.it/*",
+    "*://*.unipegaso.it/*",
+    "*://*.uniroma5.it/*"
   ],
   "action": {
-    "default_title": "UniMercatorum Dispense Downloader",
+    "default_title": "Multiversity Suite",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
@@ -35,7 +37,9 @@
       "matches": [
         "*://lms.mercatorum.multiversity.click/*",
         "*://*.multiversity.click/*",
-        "*://*.unimercatorum.it/*"
+        "*://*.unimercatorum.it/*",
+        "*://*.unipegaso.it/*",
+        "*://*.uniroma5.it/*"
       ],
       "css": ["styles.css"],
       "js": ["content.js"],
@@ -45,7 +49,9 @@
       "matches": [
         "*://lms.mercatorum.multiversity.click/*",
         "*://*.multiversity.click/*",
-        "*://*.unimercatorum.it/*"
+        "*://*.unimercatorum.it/*",
+        "*://*.unipegaso.it/*",
+        "*://*.uniroma5.it/*"
       ],
       "js": ["bridge.js"],
       "run_at": "document_start",

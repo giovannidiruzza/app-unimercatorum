@@ -1,5 +1,5 @@
 /**
- * UniMercatorum Dispense Downloader
+ * Multiversity Suite
  * Background Service Worker
  * Gestisce i fetch dei PDF ignorando le restrizioni CORS della pagina.
  */

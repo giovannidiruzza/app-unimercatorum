@@ -1,7 +1,7 @@
 /**
- * UniMercatorum Suite (Dispense Downloader & Video Auto-Player)
+ * Multiversity Suite (Dispense Downloader & Video Auto-Player)
  * Content Script per Chromium (Chrome / Edge)
- * Manifest V3 - Multiversity / UniMercatorum LMS
+ * Manifest V3 - Piattaforma Multiversity LMS (Mercatorum, Pegaso, San Raffaele)
  */
 
 (function () {
@@ -116,7 +116,7 @@
     root.innerHTML = `
       <div id="um-dl-pill" class="um-dl-pill-btn">
         <div class="um-dl-pill-icon">🎓</div>
-        <span>UniMercatorum Suite</span>
+        <span>Multiversity Suite</span>
         <span class="um-dl-pill-badge" id="um-dl-pill-badge">VIDEO</span>
       </div>
 
@@ -124,7 +124,7 @@
         <div class="um-dl-header">
           <div class="um-dl-header-title">
             <span class="um-dl-header-dot"></span>
-            <span>UniMercatorum Suite</span>
+            <span>Multiversity Suite</span>
           </div>
           <button id="um-dl-close" class="um-dl-close-btn" title="Riduci a icona">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

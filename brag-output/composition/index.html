@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Multiversity Suite - Launch Video</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #070913;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #f8fafc;
+        position: relative;
+      }
+
+      /* Ambient Background */
+      .bg-canvas {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        z-index: 0;
+      }
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-size: 60px 60px;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      }
+      .glow-orb-1 {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(99, 102, 241, 0) 70%);
+        top: -150px;
+        left: -100px;
+        filter: blur(80px);
+      }
+      .glow-orb-2 {
+        position: absolute;
+        width: 650px;
+        height: 650px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 70%);
+        bottom: -150px;
+        right: -100px;
+        filter: blur(80px);
+      }
+
+      /* Viewport Container */
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        z-index: 10;
+      }
+
+      /* Scene Common */
+      .scene {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        padding: 60px;
+        text-align: center;
+      }
+
+      /* Typography & Helpers */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        border-radius: 9999px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+      }
+      .badge-warning {
+        background: rgba(245, 158, 11, 0.15);
+        border-color: rgba(245, 158, 11, 0.35);
+        color: #fbbf24;
+      }
+      .badge-indigo {
+        background: rgba(99, 102, 241, 0.15);
+        border-color: rgba(99, 102, 241, 0.4);
+        color: #818cf8;
+      }
+      .badge-emerald {
+        background: rgba(16, 185, 129, 0.15);
+        border-color: rgba(16, 185, 129, 0.4);
+        color: #34d399;
+      }
+
+      .main-title {
+        font-size: 68px;
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+        max-width: 1400px;
+      }
+      .gradient-text-red {
+        background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gradient-text-indigo {
+        background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gradient-text-emerald {
+        background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        font-size: 26px;
+        font-weight: 500;
+        color: #94a3b8;
+        max-width: 960px;
+        line-height: 1.5;
+      }
+
+      /* Card Glassmorphism */
+      .glass-card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+      }
+
+      /* Scene 1 Elements */
+      .problem-box {
+        margin-top: 40px;
+        width: 820px;
+        padding: 36px 44px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
+      }
+      .problem-video-bar {
+        width: 100%;
+        height: 16px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 9999px;
+        overflow: hidden;
+        position: relative;
+      }
+      .problem-video-fill {
+        width: 14%;
+        height: 100%;
+        background: #ef4444;
+        border-radius: 9999px;
+      }
+      .problem-stats {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        color: #94a3b8;
+        font-weight: 600;
+      }
+
+      /* Scene 2 Elements (University Logos) */
+      .uni-row {
+        display: flex;
+        gap: 24px;
+        margin-top: 40px;
+      }
+      .uni-pill {
+        padding: 16px 28px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #e2e8f0;
+      }
+
+      /* Floating Pill Preview */
+      .pill-hero {
+        margin-top: 36px;
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 36px;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+        border: 1px solid rgba(99, 102, 241, 0.5);
+        box-shadow: 0 0 35px rgba(99, 102, 241, 0.35);
+        font-size: 32px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .pill-badge {
+        background: #6366f1;
+        color: #fff;
+        padding: 4px 14px;
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+      }
+
+      /* Scene 3 Elements (Auto Player UI) */
+      .player-mockup {
+        width: 980px;
+        padding: 40px;
+        margin-top: 30px;
+        text-align: left;
+      }
+      .player-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 20px;
+        margin-bottom: 24px;
+      }
+      .progress-track {
+        width: 100%;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 24px 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .progress-bar-active {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #6366f1, #10b981);
+        border-radius: 999px;
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+      }
+      .player-tags {
+        display: flex;
+        gap: 16px;
+        margin-top: 10px;
+      }
+      .tag-item {
+        padding: 8px 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 16px;
+        font-weight: 600;
+        color: #cbd5e1;
+      }
+
+      /* Scene 4 Elements (PDF Batch) */
+      .pdf-mockup {
+        width: 900px;
+        padding: 36px 44px;
+        margin-top: 30px;
+        text-align: left;
+      }
+      .pdf-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 12px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .pdf-status-check {
+        color: #10b981;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Scene 5 Outro */
+      .outro-logo {
+        font-size: 84px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        margin-bottom: 20px;
+      }
+      .outro-cta {
+        margin-top: 40px;
+        padding: 18px 48px;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        box-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
+        font-size: 26px;
+        font-weight: 800;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="20"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Audio Background -->
+      <audio id="bg-audio" class="clip" src="assets/audio.mp3" data-start="0" data-duration="20" preload="auto"></audio>
+
+      <!-- Ambient Background Canvas -->
+      <div class="bg-canvas">
+        <div class="bg-grid"></div>
+        <div class="glow-orb-1"></div>
+        <div class="glow-orb-2"></div>
+      </div>
+
+      <!-- SCENE 1: THE HOOK (0s - 4s) -->
+      <div class="scene clip" id="scene1" data-start="0" data-duration="4">
+        <div class="badge badge-warning">⚠️ Problema Universitario</div>
+        <h1 class="main-title">
+          Ancora bloccato a cliccare<br>
+          <span class="gradient-text-red">"Prossima Lezione"?</span>
+        </h1>
+        <p class="subtitle">
+          Ore perse tra decine di videolezioni infinite e centinaia di dispense PDF da scaricare una per una.
+        </p>
+
+        <div class="glass-card problem-box" id="problemBox">
+          <div class="problem-stats">
+            <span>Videolezione 03 di 48</span>
+            <span style="color: #f87171;">Bloccato al 14%</span>
+          </div>
+          <div class="problem-video-bar">
+            <div class="problem-video-fill"></div>
+          </div>
+          <div style="font-size: 18px; color: #94a3b8; display: flex; align-items: center; gap: 10px;">
+            <span>⏳ In attesa del clic manuale dello studente...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 2: THE SOLUTION REVEAL (4s - 8s) -->
+      <div class="scene clip" id="scene2" data-start="4" data-duration="4">
+        <div class="badge badge-indigo">✨ La Soluzione Unificata</div>
+        <h1 class="main-title">
+          Nasce <span class="gradient-text-indigo">Multiversity Suite</span>
+        </h1>
+        <p class="subtitle">
+          L'estensione intelligente per tutta la piattaforma degli atenei Multiversity.
+        </p>
+
+        <div class="pill-hero" id="pillHero">
+          <span>🎓 Multiversity Suite</span>
+          <span class="pill-badge">PRO</span>
+        </div>
+
+        <div class="uni-row" id="uniRow">
+          <div class="uni-pill">🏛️ Pegaso</div>
+          <div class="uni-pill">🏛️ Mercatorum</div>
+          <div class="uni-pill">🏛️ San Raffaele</div>
+        </div>
+      </div>
+
+      <!-- SCENE 3: AUTO-PLAY 100% (8s - 13s) -->
+      <div class="scene clip" id="scene3" data-start="8" data-duration="5">
+        <div class="badge badge-emerald">🎬 Pilota Automatico Video</div>
+        <h1 class="main-title">
+          Avanzamento Sequenziale <span class="gradient-text-emerald">Certificato al 100%</span>
+        </h1>
+        <p class="subtitle">
+          Gestione continua di capitoli, lezioni e macro-sezioni senza interruzioni.
+        </p>
+
+        <div class="glass-card player-mockup" id="playerMockup">
+          <div class="player-header">
+            <div>
+              <div style="font-size: 24px; font-weight: 700;">Capitolo 04 - Matematica Finanziaria</div>
+              <div style="font-size: 18px; color: #94a3b8;">Riproduzione e avanzamento automatico attivo</div>
+            </div>
+            <div id="statusBadge" style="padding: 8px 18px; border-radius: 999px; background: rgba(99, 102, 241, 0.2); color: #818cf8; font-weight: 700;">
+              ▶ In Riproduzione
+            </div>
+          </div>
+
+          <div class="progress-track">
+            <div class="progress-bar-active" id="playProgressBar"></div>
+          </div>
+
+          <div class="player-tags">
+            <div class="tag-item">⚡ Stealth Playback Bypass</div>
+            <div class="tag-item">🌙 Modalità Notte (Screen Wake Lock)</div>
+            <div class="tag-item">🔇 Muto Automatico</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 4: BATCH PDF (13s - 17s) -->
+      <div class="scene clip" id="scene4" data-start="13" data-duration="4">
+        <div class="badge badge-indigo">📥 Download Diretto</div>
+        <h1 class="main-title">
+          Tutte le Dispense PDF <span class="gradient-text-indigo">in un Solo Clic</span>
+        </h1>
+        <p class="subtitle">
+          Salvataggio ordinato direttamente sul tuo computer con File System Access API. Zero server esterni.
+        </p>
+
+        <div class="glass-card pdf-mockup" id="pdfMockup">
+          <div style="font-size: 18px; color: #94a3b8; margin-bottom: 16px;">📁 Cartella: C:\Universita\Economia Aziendale\Dispense</div>
+          
+          <div class="pdf-row" id="pdf1">
+            <span>📄 Cap. 01 - Introduzione al Bilancio.pdf</span>
+            <span class="pdf-status-check">✓ Scaricato</span>
+          </div>
+          <div class="pdf-row" id="pdf2">
+            <span>📄 Cap. 02 - Lo Stato Patrimoniale.pdf</span>
+            <span class="pdf-status-check">✓ Scaricato</span>
+          </div>
+          <div class="pdf-row" id="pdf3">
+            <span>📄 Cap. 03 - Conto Economico e Rendiconto.pdf</span>
+            <span class="pdf-status-check">✓ Scaricato</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 5: OUTRO & CTA (17s - 20s) -->
+      <div class="scene clip" id="scene5" data-start="17" data-duration="3">
+        <div class="outro-logo">
+          🎓 <span class="gradient-text-indigo">Multiversity Suite</span>
+        </div>
+        <h2 style="font-size: 42px; font-weight: 700; color: #f1f5f9; margin-bottom: 12px;">
+          Lo studio online con il pilota automatico.
+        </h2>
+        <p class="subtitle">
+          Universitas Mercatorum • Pegaso • San Raffaele Roma
+        </p>
+
+        <div class="outro-cta" id="ctaBtn">
+          Installa su Chrome & Edge
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // SCENE 1: Hook (0s - 4s)
+      tl.set("#scene1", { opacity: 1 }, 0)
+        .fromTo("#problemBox", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "back.out(1.5)" }, 0.2)
+        .to("#scene1", { opacity: 0, scale: 0.95, duration: 0.4 }, 3.6);
+
+      // SCENE 2: Solution Reveal (4s - 8s)
+      tl.to("#scene2", { opacity: 1, duration: 0.5 }, 4.0)
+        .fromTo("#pillHero", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 4.3)
+        .fromTo(".uni-pill", { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 0.6, ease: "power2.out" }, 5.0)
+        .to("#scene2", { opacity: 0, y: -30, duration: 0.4 }, 7.6);
+
+      // SCENE 3: Auto-Play 100% (8s - 13s)
+      tl.to("#scene3", { opacity: 1, duration: 0.5 }, 8.0)
+        .fromTo("#playerMockup", { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, 8.3)
+        .to("#playProgressBar", { width: "100%", duration: 2.8, ease: "power1.inOut" }, 8.8)
+        .call(() => {
+          const badge = document.getElementById("statusBadge");
+          if (badge) {
+            badge.style.background = "rgba(16, 185, 129, 0.25)";
+            badge.style.color = "#34d399";
+            badge.innerText = "✅ 100% COMPLETATO";
+          }
+        }, null, 11.6)
+        .to("#scene3", { opacity: 0, duration: 0.4 }, 12.6);
+
+      // SCENE 4: Batch Dispense PDF (13s - 17s)
+      tl.to("#scene4", { opacity: 1, duration: 0.5 }, 13.0)
+        .fromTo("#pdfMockup", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 13.3)
+        .fromTo("#pdf1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 14.0)
+        .fromTo("#pdf2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 14.7)
+        .fromTo("#pdf3", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 15.4)
+        .to("#scene4", { opacity: 0, scale: 0.95, duration: 0.4 }, 16.6);
+
+      // SCENE 5: Outro & CTA (17s - 20s)
+      tl.to("#scene5", { opacity: 1, duration: 0.5 }, 17.0)
+        .fromTo(".outro-logo", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: "back.out(1.7)" }, 17.2)
+        .fromTo("#ctaBtn", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 17.8);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

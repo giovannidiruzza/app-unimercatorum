@@ -1,11 +1,11 @@
-# UniMercatorum Material Downloader
+# Multiversity Suite (Material Downloader & Video Auto-Player)
 
-Strumento per l'acquisizione e il salvataggio automatico e strutturato sul computer locale del materiale didattico (dispense PDF delle videolezioni) fornito dalla piattaforma e-learning di Universitas Mercatorum.
+Strumento per l'acquisizione automatica del materiale didattico (dispense PDF) e per la riproduzione continua sequenziale dei video didattici sulle piattaforme e-learning degli atenei Multiversity (Universitas Mercatorum, Pegaso, San Raffaele Roma).
 
 ## Language
 
 **Piattaforma**:
-Il portale e-learning ufficiale di UniMercatorum da cui gli studenti fruiscono le videolezioni e scaricano le dispense.
+Il portale e-learning ufficiale degli atenei Multiversity (`*.multiversity.click`) da cui gli studenti fruiscono le videolezioni e scaricano le dispense.
 _Avoid_: Sito, server, LMS esterno
 
 **Insegnamento**:

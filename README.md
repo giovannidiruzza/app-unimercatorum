@@ -1,6 +1,6 @@
-# UniMercatorum Suite (Dispense Downloader & Video Auto-Player)
+# Multiversity Suite (Dispense Downloader & Video Auto-Player)
 
-Estensione browser (Manifest V3) per Google Chrome e Microsoft Edge progettata per la piattaforma e-learning UniMercatorum / Multiversity (`lms.mercatorum.multiversity.click`).
+Estensione browser (Manifest V3) per Google Chrome e Microsoft Edge progettata per gli atenei del gruppo **Multiversity** (Universitas Mercatorum, Università Telematica Pegaso, Università San Raffaele Roma - domini `*.multiversity.click`).
 
 Include due moduli integrati:
 1. **📥 Dispense PDF**: Scarica in modo automatico e ordinato sul tuo PC tutte le dispense PDF delle lezioni.
@@ -24,8 +24,8 @@ Include due moduli integrati:
 
 ## 📖 Come Utilizzare la Riproduzione Automatica Video
 
-1. **Apri una videolezione del corso** su UniMercatorum.
-2. **Clicca sul pulsante flottante** in basso a destra (🎓 UniMercatorum Tool).
+1. **Apri una videolezione del corso** su una qualsiasi piattaforma Multiversity (Mercatorum, Pegaso, San Raffaele).
+2. **Clicca sul pulsante flottante** in basso a destra (🎓 Multiversity Suite).
 3. **Seleziona la scheda "🎬 Auto-Play Video"** in alto nel pannello.
 4. **Configura le opzioni desiderate**:
    - **Sezione del Corso**: Seleziona se riprodurre tutto il corso in sequenza o una specifica macro-sezione.
